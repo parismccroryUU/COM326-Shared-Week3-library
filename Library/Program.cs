@@ -3,26 +3,31 @@ using Library;
 List<Book> books = new List<Book>();
 List<Member> members = new List<Member>();
 
+books.Add(new Book("C# for beginners", "BillGates", "12345678"));
+books.Add(new Book("C# Methods and classes", "Microsoft", "55667778"));
 
 
 
+members.Add(new Member(1, "John Smith", "High Street", 0790090090));
+members.Add(new Member(2, "Mary Jones", "Garden Road", 0790345666));
 
-Book book = new Book("C# for beginners", "BillGates", "12345678");
-// This information is for one book in our library
-book.DisplayInfo();
 
-// This is another book in our library
-Book book1 = new Book("C# Methods and classes", "Microsoft", "55667778");
 
-book1.DisplayInfo();
+//Display all items in book list
+foreach (Book book in books)
+{
+    Console.WriteLine($"Book Title: {book.Title}");
+    Console.WriteLine($"Author: {book.Author}");
+    Console.WriteLine($"ISBN: {book.ISBN}");
+    Console.WriteLine();
+}
 
-// Create new instances of the Member class
-// These new members are created using the
-// Member constructor in the Members class
-Member member = new Member(1, "John Smith", "1 High Street", 0790090090);
-Member member1 = new Member(2, "Mary Jones", "102 Garden Road", 0790345666);
-
-Console.WriteLine("Current library members");
-member.DisplayInfo();
-member1.DisplayInfo();
-
+//Display all members in member list
+foreach (Member member in members)
+{
+    Console.WriteLine($"Member ID: {member.MemberId}");
+    Console.WriteLine($"Name: {member.Name}");
+    Console.WriteLine($"Address: {member.Address}");
+    Console.WriteLine($"Phone: {member.Phone}");
+    Console.WriteLine();
+}
